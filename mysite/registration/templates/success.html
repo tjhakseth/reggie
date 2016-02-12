@@ -2,9 +2,18 @@
 
 {% block content %}
 
-<h1>Registration Flow</h1>
+    <h1>Registration Flow</h1>
 
+    {{ form.first_name }}
 
+    {% if form.first_name == 'Yes' %}
+        {{ form.first_name }}
+    {% endif %}
 
-
+    {% for field in form.fields %}
+        {% if field == 'selected' %}
+            {{ field }}
+        {% endif %}
+    {% endfor %}
+ 
 {% endblock %}

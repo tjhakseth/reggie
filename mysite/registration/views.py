@@ -15,7 +15,9 @@ def user_form(request):
         form = UserInfoForm(request.POST)
         if form.is_valid():
             form.save()
-            return render(request, 'success.html')
+            print "********************************************"
+            print form
+            return render(request, 'success.html', {'form': form})
         else:
             messages.error(request, "Error")
 
