@@ -3,6 +3,11 @@ from __future__ import unicode_literals
 from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
 
+class Build_User_Information(models.Model):
+    first_name = models.NullBooleanField('first name', False)
+    last_name = models.NullBooleanField('last name', False)
+
+
 class Company(models.Model):
     """Company account in Reggie"""
 
@@ -72,3 +77,4 @@ class User_event(models.Model):
         """Provides helpful representation when printed"""
 
         return self.user_event_id
+
